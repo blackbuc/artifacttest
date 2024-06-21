@@ -20,12 +20,12 @@ artifacts:
     build_output:
       base-directory: $CODEBUILD_SRC_DIR
       files:
-        - 'testing-1-dir/*'
+        - 'testing-1-dir/**/*'
       name: build_output
       discard-paths: yes
     share_build_output:
       base-directory: $CODEBUILD_SRC_DIR
       files:
-        - 'testing-2-dir/*'
+        - 'testing-2-dir/**/*'
       name: share_build_output
       discard-paths: yes

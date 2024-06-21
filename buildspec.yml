@@ -5,8 +5,6 @@ phases:
     commands:
       - mkdir testing-1-dir
       - mkdir testing-2-dir
-      - ls -lrt
-      - pwd
       - cd testing-1-dir
       - touch file1.txt
       - touch file2.txt
@@ -15,21 +13,16 @@ phases:
       - touch file3.txt
       - touch file4.txt
       - cd ..
-      - ls -lrt testing-1-dir
-      - ls -lrt testing-2-dir
+
 artifacts:
+  base-directory: $CODEBUILD_SRC_DIR
   files:
-    - '**/*'
+    - 'testing-1-dir/*'
+  discard-paths: yes
   secondary-artifacts:
-    build_output:
-      files:
-        - 'testing-1-dir/*'
-      name: build_output
-      discard-paths: yes
-      base-directory: $CODEBUILD_SRC_DIR
     share_build_output:
+      base-directory: $CODEBUILD_SRC_DIR
       files:
         - 'testing-2-dir/*'
       name: share_build_output
       discard-paths: yes
-      base-directory: $CODEBUILD_SRC_DIR

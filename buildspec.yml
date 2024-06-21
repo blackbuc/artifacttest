@@ -16,6 +16,7 @@ phases:
 
 artifacts:
   files:
+    - '**/*'
   secondary-artifacts:
     build_output:
       base-directory: $CODEBUILD_SRC_DIR

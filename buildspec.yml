@@ -18,7 +18,6 @@ artifacts:
   base-directory: $CODEBUILD_SRC_DIR
   files:
     - 'testing-1-dir/*'
-  name: build_output
   discard-paths: yes
   secondary-artifacts:
     share_build_output:

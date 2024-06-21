@@ -22,13 +22,13 @@ artifacts:
   secondary-artifacts:
     build_output:
       files:
-        - 'testing-1-dir/*'
+        - '**/*'
       name: build_output
       discard-paths: yes
       base-directory: $CODEBUILD_SRC_DIR
     share_build_output:
       files:
-        - 'testing-2-dir/*'
+        - '**/*'
       name: share_build_output
       discard-paths: yes
       base-directory: $CODEBUILD_SRC_DIR

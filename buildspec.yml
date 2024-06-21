@@ -15,7 +15,6 @@ phases:
       - cd ..
 
 artifacts:
-  name: build_output
   base-directory: $CODEBUILD_SRC_DIR
   files:
     - 'testing-1-dir/*'

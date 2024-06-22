@@ -29,11 +29,11 @@ artifacts:
       base-directory: $CODEBUILD_SRC_DIR
       files:
         - 'testing-1-dir/*'
-      name: build_output-1
+      name: build_output
       discard-paths: yes
     share_build_output:
       base-directory: $CODEBUILD_SRC_DIR
       files:
         - 'testing-2-dir/*'
-      name: build_output-2
+      name: share_build_output
       discard-paths: yes

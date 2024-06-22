@@ -6,26 +6,35 @@ phases:
       - mkdir testing-1-dir
       - mkdir testing-2-dir
       - cd testing-1-dir
-      - touch file1.txt
+      - touch file1.txt 
       - touch file2.txt
+      - echo "testing file1" >> file1.txt
+      - echo "testing file2" >> file2.txt
+      - ls -alh
       - cd ..
       - cd testing-2-dir
       - touch file3.txt
       - touch file4.txt
-      - cd ..
+      - echo "testing file3" >> file3.txt
+      - echo "testing file4" >> file4.txt
+      - ls -alh
+      - cd $CODEBUILD_SRC_DIR 
+      - ls -alh
+      - pwd
 
 artifacts:
   files:
+    - '**/*'
   secondary-artifacts:
     build_output:
       base-directory: $CODEBUILD_SRC_DIR
       files:
         - 'testing-1-dir/*'
-      name: build_output
+      name: build_output-1
       discard-paths: yes
     share_build_output:
       base-directory: $CODEBUILD_SRC_DIR
       files:
         - 'testing-2-dir/*'
-      name: share_build_output
+      name: build_output-2
       discard-paths: yes
